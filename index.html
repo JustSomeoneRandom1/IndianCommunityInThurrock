@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homestyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <title>Home - ICT</title>
+     
+    <style>
+.container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media (max-width: 730px) {
+    .container {
+        width: 100%;
+    }
+}
+
+
+    </style>  
+</head>
+<body>
+    <nav>
+        <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+        <ul id="nav-links">
+            <li><a href="home.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="Products.html" class="nav-link">Products</a></li>
+            <li><a href="Gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="Contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="indicator"></div>
+    </nav>
+    <br>
+   <img id="Banner" src="Banner.jpg" alt="ICT Banner">
+
+   <div class="container" style="text-align: center;">
+        <h1>Welcome to the Indian Community in Thurrock</h1>
+        <p>The Indian Community in Thurrock (ICT) is a vibrant and welcoming organization committed to preserving and sharing the rich heritage of Indian culture. Our community is a place where people of all ages and backgrounds can come together to experience the beauty and diversity of India's traditions. Through a variety of spectacular events, we aim to create a dynamic cultural presence in Thurrock. Whether it’s through our lively festivals, colorful celebrations, or educational programs, we strive to bring the essence of Indian culture to life, making every event an unforgettable experience for everyone involved.</p>
+    
+        <p>From the warmth of our traditional festivals to the joyful gatherings we host, our mission is to bridge the gap between generations and communities by showcasing the depth and richness of Indian customs. We believe in the power of cultural exchange to foster understanding, unity, and mutual respect. By sharing the vibrant colors, music, dance, and spirituality of India, we seek to create a sense of belonging and joy within the Thurrock community, ensuring that the legacy of Indian traditions continues to thrive for generations to come.</p>
+    
+        <h2>Our Objective</h2>
+        <p>At ICT, our primary objective is to provide a platform for cultural exchange and enjoyment while promoting a deeper understanding of Indian heritage. We work tirelessly to organize events that not only entertain but also educate the local community about the values, customs, and celebrations that make Indian culture unique. From the exuberant festivities of Diwali to the graceful dances of Navratri Garba, every event we hold is a testament to our commitment to fostering inclusivity, cultural pride, and community spirit. Through these experiences, we aim to bring people together, creating lasting bonds and cherished memories.</p>
+    </div>
+    <h1>Garba 4/10/2024</h1>
+    <img id="picture" style="border-radius: 10px; box-shadow: 0px 8px 16px black; margin: 0px auto;" src="ICTImg.jpg" alt="ICT Banner">
+
+    <script src="Indicator.js"></script>
+    <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById("nav-links");
+            if (navLinks.classList.contains("show")) {
+                navLinks.classList.remove("show");
+            } else {
+                navLinks.classList.add("show");
+            }
+        }
+    </script>    
+</body>
+</html>
