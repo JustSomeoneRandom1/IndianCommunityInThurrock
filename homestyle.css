@@ -1,0 +1,199 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(20px, 2vw, 20px); /* Dynamic scaling for font sizes */
+    text-align: center;
+    background-color: rgb(240, 240, 240);
+}
+
+h2{
+    font-weight: bold;
+    color: #252525;
+}
+
+p{
+    color: #252525;
+}
+
+#Banner {
+    width: 97.5%;
+    height: auto; /* Keep the aspect ratio of the image */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5); /* Soft shadow */
+    border-radius: 10px;
+    margin: 0 auto; /* Center the banner horizontally */
+    overflow: hidden; /* Hide parts of the banner that go outside its container */
+    object-fit: cover; /* Ensures the image covers the container, clipping the excess */
+}
+
+@media (max-width: 600px) {
+    #Banner {
+        width: 100%; /* Maintain full width on mobile */
+        height: auto; /* Maintain the aspect ratio */
+    }
+}
+
+
+
+/* Full width navigation bar */
+nav {
+    background-color: #f3f3f3;
+    color: rgb(37, 37, 37);
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    font-family: "Roboto Mono", monospace;
+    position: relative; /* Position relative for the indicator */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+/* Navigation items */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap; /* Allows wrapping if items don't fit */
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: #252525;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #FF6F00; /* Highlight on hover */
+}
+
+/* Hover effect: increase font size */
+
+
+/* Stack the navigation items vertically on small screens */
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+}
+
+@media (max-width: 730px) {
+    /* Hide the horizontal nav bar on small screens */
+    #nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        max-height: 0; /* Start with hidden height */
+        overflow: hidden; /* Prevent content overflow */
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        background-color: #0a0a0a;
+        text-align: center;
+        align-items: center;
+        transition: max-height 0.5s ease; /* Smooth animation for expanding */
+    }
+
+    /* When the menu is visible (with show class) */
+    #nav-links.show {
+        max-height: 300px; /* Adjust height for the content */
+    }
+
+    /* Style the hamburger menu icon */
+    .hamburger-menu {
+        display: block; /* Show hamburger menu on smaller screens */
+        font-size: 30px;
+        cursor: pointer;
+        color: rgb(0, 0, 0);
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        padding: 10px;
+        border-radius: 100px;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Individual list items styling */
+    nav ul li {
+        display: block;
+        margin: 10px 0; /* Space between buttons */
+        width: 100%; /* Make the button take full width */
+    }
+
+    /* Nav links styling */
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 15px;
+        font-size: 1.2rem;
+        display: block;
+        background-color: #333; /* Button-like appearance */
+        width: 100%; /* Make the links full width */
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    /* Hover effect for links */
+    nav ul li a:hover {
+        background-color: #555;
+    }
+
+    /* Make the menu scrollable if it exceeds the screen height */
+    #nav-links.show {
+        overflow-y: auto;
+        max-height: 100vh; /* Allow scrolling within the screen height */
+    }
+
+    /* Customize scrollbar for better appearance */
+    #nav-links::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    #nav-links::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 10px;
+    }
+
+    #nav-links::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
+    .indicator{
+        display: none;
+    }
+}
+
+
+
+
+
+
+/* Example container for content */
+.container {
+    padding: 20px;
+}
+
+::selection {
+    background: rgb(255, 60, 0);
+  }
+
+  .indicator {
+    position: absolute; /* Position absolute to the nav */
+    bottom: 0; /* Align it to the bottom of the nav */
+    left: 0; /* Start at the left */
+    height: 4px; /* Height of the indicator */
+    background: rgb(158, 158, 158); /* Color of the indicator */
+    transition: left 0.3s ease, width 0.3s ease; /* Smooth transition */
+}
+
+#picture{
+    width: 50%;
+}

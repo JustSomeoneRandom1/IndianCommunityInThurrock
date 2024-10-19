@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us - ICT</title>
+    <!-- Preconnect and load fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;700&family=Roboto+Mono:wght@100;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="homestyle.css">
+    <style>
+        /* General body styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto Mono", monospace;
+            background-color: #f9f9f9; /* Light background for a clean look */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Page container */
+        .container {
+            max-width: 900px;
+            margin: 20px auto; /* Adjusted margin for better spacing */
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            border-radius: 8px;
+            text-align: center; /* Centering content inside container */
+        }
+
+        /* Heading styles */
+        h1 {
+            font-family: "Poppins", sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            color: #111111;
+            font-weight: bold;
+        }
+
+        /* Paragraph styles */
+        p {
+            font-family: "Roboto Mono", monospace;
+            font-size: 1.2rem;
+            padding: 10px 0;
+            text-align: justify;
+            color: #111111;
+            font-weight: bold;
+        }
+
+        /* Highlight special events */
+        .highlight {
+            font-weight: bold;
+            color: #d35400;
+        }
+
+        /* Button Styling */
+        .button {
+            width: 100%; /* Button takes full width of container */
+            max-width: 200px; /* Limit button width */
+            padding: 10px;
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            transition: box-shadow 0.5s ease; /* Add transition to the box-shadow */
+            border: none;
+            cursor: pointer;
+            font-family: "Poppins", sans-serif;
+            font-weight: bold;
+            color: #ffffff;
+            margin-top: 10px; /* Space above button */
+        }
+
+        .button:hover {
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7); /* Larger shadow on hover */
+        }
+
+        /* Navigation styles */
+        nav {
+            text-align: center; /* Center navigation items */
+            margin-bottom: 20px; /* Space below navigation */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around; /* Space out navigation items */
+            flex-wrap: wrap; /* Allows wrapping if items don't fit */
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        /* Hide navigation links initially for smaller screens */
+        #nav-links {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        /* Hamburger menu styling */
+        .hamburger-menu {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+    
+        }
+
+        @media (max-width: 730px) {
+    /* Hide the horizontal nav bar on small screens */
+    #nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        max-height: 0; /* Start with hidden height */
+        overflow: hidden; /* Prevent content overflow */
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        background-color: #0a0a0a;
+        text-align: center;
+        align-items: center;
+        transition: max-height 0.5s ease; /* Smooth animation for expanding */
+    }
+
+    /* When the menu is visible (with show class) */
+    #nav-links.show {
+        max-height: 300px; /* Adjust height for the content */
+    }
+
+    /* Style the hamburger menu icon */
+    .hamburger-menu {
+        display: block; /* Show hamburger menu on smaller screens */
+        font-size: 30px;
+        cursor: pointer;
+        color: rgb(0, 0, 0);
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        padding: 10px;
+        border-radius: 100px;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Individual list items styling */
+    nav ul li {
+        display: block;
+        margin: 10px 0; /* Space between buttons */
+        width: 100%; /* Make the button take full width */
+    }
+
+    /* Nav links styling */
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 15px;
+        font-size: 1.2rem;
+        display: block;
+        background-color: #333; /* Button-like appearance */
+        width: 100%; /* Make the links full width */
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    /* Hover effect for links */
+    nav ul li a:hover {
+        background-color: #555;
+    }
+
+    /* Make the menu scrollable if it exceeds the screen height */
+    #nav-links.show {
+        overflow-y: auto;
+        max-height: 100vh; /* Allow scrolling within the screen height */
+    }
+
+    /* Customize scrollbar for better appearance */
+    #nav-links::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    #nav-links::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 10px;
+    }
+
+    #nav-links::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
+    .indicator{
+        display: none;
+    }
+}
+
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem; /* Smaller heading on small screens */
+            }
+
+            .button {
+                width: 100%; /* Full width on small screens */
+            }
+
+            .container {
+                padding: 10px; /* Less padding on small screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+        <ul id="nav-links">
+            <li><a href="home.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="Products.html" class="nav-link">Products</a></li>
+            <li><a href="Gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="Contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="indicator"></div>
+    </nav>
+
+    <h1>Contact Information</h1>
+    <div class="container">
+        <h2>Phone number: </h2>
+        <strong>+44 1234567890</strong>
+        <a href="tel:+441234567890">
+            <button style="background-color: rgb(73, 146, 0);" class="button"> &#x260F; Call</button>
+        </a>
+    </div> 
+
+    <div class="container">
+        <h2>Email: </h2>
+        <strong>indiancommunityinthurrock@gmail.com</strong>
+        <a href="mailto:indiancommunityinthurrock@gmail.com">
+             <button style="background-color: rgb(73, 146, 0);" class="button"> &#9993; Email</button>
+            
+        </a>
+    </div>
+    <div class="container">
+        <h2>Facebook: </h2>
+        <strong>@Indian Community in Thurrock</strong>
+        <a href="https://www.facebook.com/profile.php?id=61561216694413">
+            <button style="background-color: rgb(0, 89, 255);" class="button"> Open</button>
+        </a>
+    </div>
+
+    <div class="container">
+        <h2>YouTube: </h2>
+        <strong>@IndianCommunityInThurrock</strong>
+        <a href="https://www.youtube.com/@IndianCommunityInThurrock">
+            <button style="background-color: rgb(255, 0, 0);" class="button"> Open</button>
+        </a>
+        <br>
+        <br>
+        <iframe width="100%" style="border-radius: 10px;" height="315" src="https://www.youtube.com/embed/DpK0tABx5q4?si=GXE9U-b_Zck1pUzo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div class="container">
+        <h2>EventBrite: </h2>
+        <a href="https://www.eventbrite.co.uk/o/indian-community-in-thurrock-72463507523?fbclid=IwY2xjawGArdNleHRuA2FlbQIxMAABHWyK4hXClcAoLI7R8wwteqEfxV1a7pgOD_o_pt5z54s7s2mxXSjc77b5NQ_aem_XWdM2ClA3Gzkqem8ph8lxA">
+            <button style="background-color: rgb(255, 103, 1);" class="button"> Open</button>
+        </a>
+    </div>
+
+    <script src="Indicator.js"></script>
+    <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById("nav-links");
+            if (navLinks.classList.contains("show")) {
+                navLinks.classList.remove("show");
+            } else {
+                navLinks.classList.add("show");
+            }
+        }
+    </script>
+</body>
+</html>

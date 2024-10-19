@@ -1,0 +1,117 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homestyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <title>Gallery - ICT</title>
+
+    <style>
+        #banner {
+            width: 95%;
+            margin: 50px auto;
+            display: block;
+        }
+
+        /* Picture Container Styling with Smooth Scroll */
+        #marqueeContainer {
+            overflow-x: auto; /* Enable horizontal scrolling */
+            overflow-y: hidden; /* Disable vertical scrolling */
+            width: 100%; /* Full width for marquee */
+            display: flex;
+            justify-content: center; /* Center the images horizontally */
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+
+        #pictureContainer {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px; /* Add some spacing between images */
+            align-items: center;
+        }
+
+        #pictureContainer li {
+            flex-shrink: 0; /* Prevent images from shrinking */
+        }
+
+        #pictureContainer img {
+            height: 400px; /* Set a fixed height for images */
+            width: auto; /* Maintain the aspect ratio */
+            border-radius: 10px; /* Optional: Add rounded corners */
+            display: block;
+        }
+
+        /* Scrollbar styling */
+        #marqueeContainer::-webkit-scrollbar {
+            height: 12px;
+        }
+
+        #marqueeContainer::-webkit-scrollbar-thumb {
+            background-color: #888;
+            border-radius: 10px;
+        }
+
+        #marqueeContainer::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            #banner {
+                width: 100%; /* Full width on small screens */
+            }
+
+            #pictureContainer img {
+                height: 300px; /* Smaller image height for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+        <ul id="nav-links">
+            <li><a href="home.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="Products.html" class="nav-link">Products</a></li>
+            <li><a href="Gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="Contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="indicator"></div>
+    </nav>
+
+    <br>
+
+    <img style="box-shadow: 0px 8px 16px black; border-radius: 10px;" id="banner" src="Banner.jpg" alt="Banner Image">
+
+    <!-- Scrollable Container -->
+    <div id="marqueeContainer">
+        <ul id="pictureContainer">
+            <li><img id="Image1" src="iCTimg1.jpg" alt="Image 1"></li>
+            <li><img id="Image2" src="iCTimg2.jpg" alt="Image 2"></li>
+            <li><img id="Image3" src="iCTimg3.jpg" alt="Image 3"></li>            
+            <li><img id="Image4" src="BannerForYT.jpg" alt="Image 3"></li>
+        </ul>
+    </div>
+
+    <script src="Indicator.js"></script>
+    <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById("nav-links");
+            if (navLinks.classList.contains("show")) {
+                navLinks.classList.remove("show");
+            } else {
+                navLinks.classList.add("show");
+            }
+        }
+    </script>
+</body>
+</html>
